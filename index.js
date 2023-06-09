@@ -271,6 +271,10 @@ document.getElementById('send_email_4').addEventListener('click', function () {
     const subject = document.getElementById('send_email_2').value;
     const body = document.getElementById('send_email_3').value;
     sendEmail(to, subject, body);
+    alert("Đã gửi thành công");
+    document.getElementById('send_email_1').value='';
+    document.getElementById('send_email_2').value='';
+    document.getElementById('send_email_3').value='';
 });
 
 document.getElementById("send_button_attach").addEventListener('click', function () {
@@ -288,6 +292,10 @@ document.getElementById('send_email_a4').addEventListener('click', function () {
     const body = document.getElementById('send_email_3').value;
     const attachment = document.getElementById('file-input').files[0]; // Tệp đính kèm
     sendEmailWithAttachment(to, subject, body, attachment);
+    alert("Đã gửi thành công");
+    document.getElementById('send_email_1').value='';
+    document.getElementById('send_email_2').value='';
+    document.getElementById('send_email_3').value='';
 });
 
 document.getElementById('send_button_attach').addEventListener('click', function () {
