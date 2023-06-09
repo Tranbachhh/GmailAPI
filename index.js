@@ -298,15 +298,6 @@ document.getElementById('send_email_a4').addEventListener('click', function () {
     document.getElementById('send_email_3').value='';
 });
 
-document.getElementById('send_button_attach').addEventListener('click', function () {
-    const to = 'tu29102002@gmail.com';
-    const subject = 'Tiêu đề email'; // Tiêu đề email
-    const body = 'Nội dung email'; // Nội dung email
-    const attachment = document.getElementById('file-input').files[0]; // Tệp đính kèm
-    sendEmailWithAttachment(to, subject, body, attachment);
-});
-
-
 async function viewEmailDetails(emailId) {
     try {
       const response = await gapi.client.gmail.users.messages.get({
