@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gmail API Quickstart</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        ul {
+        list-style: none;
+        }
+
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
+
+        .detailEmail{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row container-fluid bg-light">
+        <h1 class="text-center text-primary col-12">Gmail API Quickstart</h1>
+        <!--Add buttons to initiate auth sequence and sign out-->
+        <div class="col-12 text-center">
+            <button id="authorize_button" onclick="handleAuthClick()" class="btn btn-primary">Đăng nhập</button>
+        </div>
+        <div class="col-12 text-right">
+            <button id="signout_button" onclick="handleSignoutClick()" class="btn btn-danger">Đăng xuất</button>
+        </div>
+        <div class="col-3">
+            <ul>
+                <li><button id="list_email" class="btn btn-info mb-2">Danh sách email</button></li>
+                <li><button id="send_button" class="btn btn-info mb-2">Gửi Email</button></li>
+                <li><button id="send_button_attach" class="btn btn-info">Gửi Email với file đính kèm</button></li>
+            </ul>
+        </div>
+        <div class="row col-8">
+            <input type="text" placeholder="Email nhận" id="send_email_1" class="col-8 mb-1 form-control rounded">
+            <input type="text" placeholder="Tiêu đề" id="send_email_2" class="col-8 form-control mb-1 rounded">
+            <textarea placeholder="Nội dung" id="send_email_3" class="col-12 form-control mb-1 rounded"></textarea>
+            <input type="file" id="file-input" class="col-12 rounded">
+            <div class="col-12 text-center">
+                <button id="send_email_4" class="rounded">Gửi</button>
+            </div>
+            <div class="col-12 text-center">
+                <button id="send_email_a4" class="rounded">Gửi</button>
+            </div>
+        </div>
+        </div>       
+    </div>
+    <div class="row p-5 text-center" id="content">
+    </div>
+    
+    <script type="text/javascript" src="index.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+</body>
+
+</html>
